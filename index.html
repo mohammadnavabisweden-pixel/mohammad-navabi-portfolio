@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohammad Navabi — Portfolio</title>
+  <meta name="description" content="Mohammad is an AI product builder and customer success manager who specializes in transforming early-stage ideas into working MVPs. He combines software enginee" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent: #6366f1;
+      --text: #ffffff;
+      --text-muted: rgba(255,255,255,0.6);
+      --border: rgba(255,255,255,0.12);
+      --bg: #0a0a0a;
+      --bg-card: rgba(255,255,255,0.05);
+      --font: 'Space Grotesk', system-ui, sans-serif;
+      --max-w: 1000px;
+      --gradient: linear-gradient(135deg, var(--accent), #ec4899);
+    }
+    body { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { opacity: 0.8; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,10,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
+      display: flex; justify-content: space-between; align-items: center; height: 60px;
+    }
+    .nav-name { font-weight: 700; font-size: 1.05rem; background: var(--gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-links { display: flex; gap: 24px; font-size: 0.85rem; }
+    .nav-links a { color: var(--text-muted); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .hero {
+      padding: 160px 0 100px; text-align: center;
+      background: radial-gradient(ellipse at 50% 0%, rgba(99,102,241,0.15) 0%, transparent 60%);
+    }
+    .hero-badge {
+      display: inline-block; padding: 6px 20px; border-radius: 30px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      font-size: 0.82rem; color: var(--text-muted); margin-bottom: 28px;
+    }
+    .hero-name {
+      font-size: 3.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 16px;
+      background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.6) 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-title { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 24px; font-weight: 400; }
+    .hero-bio { max-width: 580px; margin: 0 auto 36px; color: var(--text-muted); font-size: 0.95rem; }
+    .hero-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .hero-link {
+      padding: 10px 24px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .hero-link.primary { background: var(--gradient); color: white; }
+    .hero-link.secondary { background: var(--bg-card); border: 1px solid var(--border); color: var(--text); }
+    .hero-link:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+    section { padding: 80px 0; }
+    .section-label {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--accent); font-weight: 600; margin-bottom: 8px;
+    }
+    .section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; }
+    .skills-container { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill-badge {
+      padding: 8px 18px; background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 8px; font-size: 0.85rem; transition: border-color 0.2s;
+    }
+    .skill-badge:hover { border-color: var(--accent); }
+    .exp-item {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 28px; margin-bottom: 16px; transition: border-color 0.2s;
+    }
+    .exp-item:hover { border-color: var(--accent); }
+    .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+    .exp-company { font-weight: 600; font-size: 1.05rem; }
+    .exp-date { font-size: 0.82rem; color: var(--text-muted); }
+    .exp-position { color: var(--accent); margin-bottom: 10px; }
+    .exp-desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; }
+    .exp-achievements { list-style: none; }
+    .exp-achievements li { font-size: 0.875rem; padding: 3px 0; color: var(--text-muted); }
+    .exp-achievements li::before { content: "▹ "; color: var(--accent); }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .project-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 28px; transition: all 0.3s;
+    }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    .project-name { font-weight: 600; font-size: 1.05rem; margin-bottom: 8px; }
+    .project-desc { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 14px; }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .project-tech span { font-size: 0.75rem; padding: 2px 8px; background: rgba(255,255,255,0.05); border-radius: 4px; color: var(--text-muted); }
+    .project-links { font-size: 0.85rem; }
+    .project-links a { margin-right: 16px; }
+    .edu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .edu-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+    .edu-degree { font-weight: 600; margin-bottom: 4px; }
+    .edu-institution { color: var(--accent); font-size: 0.9rem; margin-bottom: 4px; }
+    .edu-date { font-size: 0.82rem; color: var(--text-muted); }
+    footer { text-align: center; padding: 40px 0; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border); }
+    @media (max-width: 640px) { .hero-name { font-size: 2.2rem; } .nav-links { display: none; } .hero { padding: 120px 0 60px; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-name">Mohammad Navabi</span>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+      </div>
+    </div>
+  </nav>
+  <div class="hero">
+    <div class="container">
+      <span class="hero-badge">AI Product Builder - Customer Success Manager</span>
+      <h1 class="hero-name">Mohammad Navabi</h1>
+      <p class="hero-title">Tehran Province, Iran</p>
+      <p class="hero-bio">Mohammad is an AI product builder and customer success manager who specializes in transforming early-stage ideas into working MVPs. He combines software engineering, product thinking, and AI-assisted development tools to accelerate digital product development from concept to launch. His background spans software development and fintech environments with expertise in backend architecture and rapid prototyping.</p>
+      <div class="hero-links">
+        <a class="hero-link primary" href="www.linkedin.com/in/mohamadnavabi-68880b40" target="_blank" rel="noopener">LinkedIn</a>
+        
+        
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <section id="skills">
+      <p class="section-label">Expertise</p>
+      <h2 class="section-title">Skills &amp; Tools</h2>
+      <div class="skills-container">
+    <div class="skills-group">
+      <div class="skills-group-label">Technical</div>
+      <div class="skill-tags skills-container">
+        <span class="skill-tag skill-badge">Java</span><span class="skill-tag skill-badge">API Architecture</span><span class="skill-tag skill-badge">AI Development Tools</span><span class="skill-tag skill-badge">Backend Architecture</span><span class="skill-tag skill-badge">Linux System Administration</span><span class="skill-tag skill-badge">Docker</span><span class="skill-tag skill-badge">Kubernetes</span><span class="skill-tag skill-badge">Cloud Infrastructure</span><span class="skill-tag skill-badge">ELK Stack</span><span class="skill-tag skill-badge">Prometheus</span><span class="skill-tag skill-badge">Grafana</span><span class="skill-tag skill-badge">Network Security</span><span class="skill-tag skill-badge">ISMS</span><span class="skill-tag skill-badge">Penetration Testing</span>
+      </div>
+    </div>
+  
+    <div class="skills-group">
+      <div class="skills-group-label">Tools</div>
+      <div class="skill-tags skills-container">
+        <span class="skill-tag skill-badge">MetaTrader</span><span class="skill-tag skill-badge">Docker</span><span class="skill-tag skill-badge">Kubernetes</span><span class="skill-tag skill-badge">ELK Stack</span><span class="skill-tag skill-badge">Prometheus</span><span class="skill-tag skill-badge">Grafana</span><span class="skill-tag skill-badge">HP Servers</span><span class="skill-tag skill-badge">VPN Services</span><span class="skill-tag skill-badge">IDS/IPS Solutions</span>
+      </div>
+    </div>
+  
+    <div class="skills-group">
+      <div class="skills-group-label">Languages</div>
+      <div class="skill-tags skills-container">
+        <span class="skill-tag skill-badge">Persian</span><span class="skill-tag skill-badge">English</span>
+      </div>
+    </div>
+  
+    <div class="skills-group">
+      <div class="skills-group-label">Soft Skills</div>
+      <div class="skill-tags skills-container">
+        <span class="skill-tag skill-badge">Product Strategy</span><span class="skill-tag skill-badge">Customer Relationship Management</span><span class="skill-tag skill-badge">Team Leadership</span><span class="skill-tag skill-badge">Project Management</span><span class="skill-tag skill-badge">Problem Solving</span>
+      </div>
+    </div>
+  </div>
+    </section>
+    <section id="experience">
+      <p class="section-label">Career</p>
+      <h2 class="section-title">Work Experience</h2>
+      
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-company">Self Employed</span>
+        <span class="exp-date">Jan 2025 – Present</span>
+      </div>
+      <p class="exp-position">Product Strategy & Execution</p>
+      <p class="exp-desc">Focus on 0→1 stage product development, transforming early-stage ideas into real and usable products</p>
+      
+        <ul class="exp-achievements">
+          <li>Idea validation</li><li>MVP development</li><li>Rapid product prototyping</li><li>Startup product execution</li>
+        </ul>
+      
+    </div>
+  
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-company">Baloot</span>
+        <span class="exp-date">Jan 2022 – Feb 2025</span>
+      </div>
+      <p class="exp-position">Customer Relationship Management Manager</p>
+      <p class="exp-desc">Managed customer relationships and success initiatives</p>
+      
+    </div>
+  
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-company">Baloot</span>
+        <span class="exp-date">May 2021 – Aug 2023</span>
+      </div>
+      <p class="exp-position">Infrastructure Manager</p>
+      <p class="exp-desc">Managed infrastructure and technical operations</p>
+      
+    </div>
+  
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-company">Rahnema Co.</span>
+        <span class="exp-date">Mar 2019 – Apr 2022</span>
+      </div>
+      <p class="exp-position">Infrastructure Specialist</p>
+      <p class="exp-desc">Linux system administrator and cloud infrastructure specialist</p>
+      
+        <ul class="exp-achievements">
+          <li>Deploy cloud infrastructure and docker system and kubernetes</li><li>Deploy security and monitoring plan such as ELK stack, Prometheus, Grafana</li>
+        </ul>
+      
+    </div>
+  
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-company">Rahnema Co.</span>
+        <span class="exp-date">Apr 2015 – Dec 2021</span>
+      </div>
+      <p class="exp-position">System Administrator</p>
+      <p class="exp-desc">Manage server and application infrastructure</p>
+      
+        <ul class="exp-achievements">
+          <li>Infrastructure design and HP server setup</li><li>Automate application problem monitoring and alerting</li><li>Solve network problem and VPN service</li>
+        </ul>
+      
+    </div>
+  
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-company">Iranian Water and Waste Water Equipment</span>
+        <span class="exp-date">Jan 2014 – Sep 2015</span>
+      </div>
+      <p class="exp-position">Information Technology Manager</p>
+      <p class="exp-desc">Launch and maintenance new technology of web application service</p>
+      
+    </div>
+  
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-company">Irisa</span>
+        <span class="exp-date">Aug 2012 – Sep 2013</span>
+      </div>
+      <p class="exp-position">Security Researcher</p>
+      <p class="exp-desc">Implementation of ISMS in projects and documentation</p>
+      
+    </div>
+  
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-company">PayamPardaz</span>
+        <span class="exp-date">Jan 2011 – Jan 2012</span>
+      </div>
+      <p class="exp-position">Security Specialist</p>
+      <p class="exp-desc">Implementation of ISMS solution and penetration testing in MCI</p>
+      
+    </div>
+  
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-company">Bayan</span>
+        <span class="exp-date">Jan 2010 – Jan 2011</span>
+      </div>
+      <p class="exp-position">Security Analyst</p>
+      <p class="exp-desc">Research and development of security solutions for application and network improvement</p>
+      
+        <ul class="exp-achievements">
+          <li>IDS/IPS solution implementation</li>
+        </ul>
+      
+    </div>
+  
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-company">Montazeran ISP</span>
+        <span class="exp-date">Jan 2009 – Jan 2010</span>
+      </div>
+      <p class="exp-position">Information Technology Technician</p>
+      <p class="exp-desc">IT support and maintenance</p>
+      
+    </div>
+  
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-company">Shahre Aftab Office</span>
+        <span class="exp-date">Jan 2008 – Jan 2009</span>
+      </div>
+      <p class="exp-position">Technical Support Engineer</p>
+      <p class="exp-desc">Technical support and engineering services</p>
+      
+    </div>
+  
+    </section>
+    <section id="projects">
+      <p class="section-label">Portfolio</p>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid"></div>
+    </section>
+    <section id="education">
+      <p class="section-label">Background</p>
+      <h2 class="section-title">Education</h2>
+      <div class="edu-grid">
+    <div class="edu-item edu-card">
+      <div class="edu-degree">null in null</div>
+      <div class="edu-institution">Jahad University of Tehran</div>
+      <div class="edu-date">2010 – 2012</div>
+      
+    </div>
+  </div>
+    </section>
+    
+  </div>
+  <footer>
+    <p>mohamad.navabi82@gmail.com · Tehran Province, Iran</p>
+    <p style="margin-top:8px">&copy; 2026 Mohammad Navabi</p>
+  </footer>
+</body>
+</html>
