@@ -4,115 +4,110 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mohammad Navabi — Portfolio</title>
-  <meta name="description" content="Highly accomplished Senior Operations and Customer Success Leader with expertise in scaling support infrastructure and driving service excellence in fast-paced " />
+  <meta name="description" content="Highly accomplished Senior Operations and Customer Success Leader with proven expertise in scaling support infrastructure and driving service excellence in fast" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --accent: #6366f1;
       --text: #ffffff;
-      --text-muted: rgba(255,255,255,0.6);
-      --border: rgba(255,255,255,0.12);
-      --bg: #0a0a0a;
-      --bg-card: rgba(255,255,255,0.05);
-      --font: 'Space Grotesk', system-ui, sans-serif;
-      --max-w: 1000px;
-      --gradient: linear-gradient(135deg, var(--accent), #ec4899);
+      --text-muted: rgba(255,255,255,0.65);
+      --border: rgba(255,255,255,0.1);
+      --bg: #0f172a;
+      --bg-card: rgba(255,255,255,0.06);
+      --glass: rgba(255,255,255,0.08);
+      --glass-border: rgba(255,255,255,0.15);
+      --font: 'Outfit', system-ui, sans-serif;
+      --max-w: 960px;
     }
-    body { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.6; }
+    body { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.6; overflow-x: hidden; }
+    body::before {
+      content: ""; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%;
+      background: radial-gradient(circle at 30% 20%, rgba(99,102,241,0.12) 0%, transparent 40%),
+                  radial-gradient(circle at 70% 60%, rgba(236,72,153,0.08) 0%, transparent 40%);
+      z-index: -1;
+    }
     a { color: var(--accent); text-decoration: none; }
-    a:hover { opacity: 0.8; }
     .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(10,10,10,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
+      background: rgba(15,23,42,0.6); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
     }
     .nav-inner {
       max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
-      display: flex; justify-content: space-between; align-items: center; height: 60px;
+      display: flex; justify-content: space-between; align-items: center; height: 64px;
     }
-    .nav-name { font-weight: 700; font-size: 1.05rem; background: var(--gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-name { font-weight: 600; font-size: 1rem; }
     .nav-links { display: flex; gap: 24px; font-size: 0.85rem; }
     .nav-links a { color: var(--text-muted); transition: color 0.2s; }
     .nav-links a:hover { color: var(--text); }
-    .hero {
-      padding: 160px 0 100px; text-align: center;
-      background: radial-gradient(ellipse at 50% 0%, rgba(99,102,241,0.15) 0%, transparent 60%);
+    .hero { padding: 160px 0 80px; text-align: center; }
+    .hero-avatar {
+      width: 96px; height: 96px; border-radius: 24px; margin: 0 auto 32px;
+      background: linear-gradient(135deg, var(--accent), #ec4899);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.2rem; font-weight: 700; color: white; box-shadow: 0 16px 40px rgba(99,102,241,0.3);
     }
-    .hero-badge {
-      display: inline-block; padding: 6px 20px; border-radius: 30px;
-      background: var(--bg-card); border: 1px solid var(--border);
-      font-size: 0.82rem; color: var(--text-muted); margin-bottom: 28px;
-    }
-    .hero-name {
-      font-size: 3.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 16px;
-      background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.6) 100%);
-      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .hero-title { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 24px; font-weight: 400; }
-    .hero-bio { max-width: 580px; margin: 0 auto 36px; color: var(--text-muted); font-size: 0.95rem; }
+    .hero-name { font-size: 2.8rem; font-weight: 700; line-height: 1.15; margin-bottom: 8px; }
+    .hero-title { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 20px; }
+    .hero-bio { max-width: 540px; margin: 0 auto 32px; color: var(--text-muted); font-size: 0.95rem; font-weight: 300; }
     .hero-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
     .hero-link {
-      padding: 10px 24px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
-      transition: transform 0.2s, box-shadow 0.2s;
+      padding: 10px 22px; border-radius: 12px; font-size: 0.85rem; font-weight: 500;
+      backdrop-filter: blur(12px); transition: all 0.2s;
     }
-    .hero-link.primary { background: var(--gradient); color: white; }
-    .hero-link.secondary { background: var(--bg-card); border: 1px solid var(--border); color: var(--text); }
-    .hero-link:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
-    section { padding: 80px 0; }
-    .section-label {
-      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;
-      color: var(--accent); font-weight: 600; margin-bottom: 8px;
+    .hero-link.primary { background: var(--accent); color: white; }
+    .hero-link.secondary { background: var(--glass); border: 1px solid var(--glass-border); color: var(--text); }
+    .hero-link:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+    section { padding: 64px 0; }
+    .section-title { font-size: 1.6rem; font-weight: 600; margin-bottom: 32px; text-align: center; }
+    .glass-card {
+      background: var(--glass); backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border); border-radius: 16px;
+      padding: 24px; transition: all 0.3s;
     }
-    .section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; }
-    .skills-container { display: flex; flex-wrap: wrap; gap: 10px; }
+    .glass-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 16px 40px rgba(0,0,0,0.2); }
+    .skills-container { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
     .skill-badge {
-      padding: 8px 18px; background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: 8px; font-size: 0.85rem; transition: border-color 0.2s;
+      padding: 8px 18px; background: var(--glass); backdrop-filter: blur(8px);
+      border: 1px solid var(--glass-border); border-radius: 10px; font-size: 0.85rem;
+      transition: all 0.2s;
     }
-    .skill-badge:hover { border-color: var(--accent); }
-    .exp-item {
-      background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
-      padding: 28px; margin-bottom: 16px; transition: border-color 0.2s;
-    }
+    .skill-badge:hover { border-color: var(--accent); background: rgba(99,102,241,0.15); }
+    .exp-item { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid var(--glass-border); border-radius: 16px; padding: 24px; margin-bottom: 16px; transition: border-color 0.2s; }
     .exp-item:hover { border-color: var(--accent); }
     .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
-    .exp-company { font-weight: 600; font-size: 1.05rem; }
-    .exp-date { font-size: 0.82rem; color: var(--text-muted); }
-    .exp-position { color: var(--accent); margin-bottom: 10px; }
-    .exp-desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; }
+    .exp-company { font-weight: 600; font-size: 1rem; }
+    .exp-date { font-size: 0.8rem; color: var(--text-muted); }
+    .exp-position { color: var(--accent); font-size: 0.9rem; margin-bottom: 10px; }
+    .exp-desc { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 8px; }
     .exp-achievements { list-style: none; }
-    .exp-achievements li { font-size: 0.875rem; padding: 3px 0; color: var(--text-muted); }
-    .exp-achievements li::before { content: "▹ "; color: var(--accent); }
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .project-card {
-      background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
-      padding: 28px; transition: all 0.3s;
-    }
-    .project-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-    .project-name { font-weight: 600; font-size: 1.05rem; margin-bottom: 8px; }
-    .project-desc { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 14px; }
-    .project-tech { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
-    .project-tech span { font-size: 0.75rem; padding: 2px 8px; background: rgba(255,255,255,0.05); border-radius: 4px; color: var(--text-muted); }
-    .project-links { font-size: 0.85rem; }
+    .exp-achievements li { font-size: 0.85rem; padding: 2px 0; color: var(--text-muted); }
+    .exp-achievements li::before { content: "◆ "; color: var(--accent); font-size: 0.7rem; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+    .project-card { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid var(--glass-border); border-radius: 16px; padding: 24px; transition: all 0.3s; }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.25); }
+    .project-name { font-weight: 600; margin-bottom: 8px; }
+    .project-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px; }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .project-tech span { font-size: 0.72rem; padding: 3px 10px; background: rgba(255,255,255,0.05); border-radius: 6px; color: var(--text-muted); border: 1px solid var(--border); }
+    .project-links { font-size: 0.82rem; }
     .project-links a { margin-right: 16px; }
     .edu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
-    .edu-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+    .edu-card { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid var(--glass-border); border-radius: 16px; padding: 24px; }
     .edu-degree { font-weight: 600; margin-bottom: 4px; }
-    .edu-institution { color: var(--accent); font-size: 0.9rem; margin-bottom: 4px; }
-    .edu-date { font-size: 0.82rem; color: var(--text-muted); }
+    .edu-institution { color: var(--accent); font-size: 0.9rem; }
+    .edu-date { font-size: 0.8rem; color: var(--text-muted); }
     footer { text-align: center; padding: 40px 0; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border); }
-    @media (max-width: 640px) { .hero-name { font-size: 2.2rem; } .nav-links { display: none; } .hero { padding: 120px 0 60px; } }
+    @media (max-width: 640px) { .hero-name { font-size: 2rem; } .nav-links { display: none; } .hero { padding: 120px 0 60px; } }
   
     /* ─── Decorative Enhancements ─── */
-    .hero-badge { animation: revealScale .5s ease .1s both; }
-    .hero-name { animation: revealUp .7s ease .2s both; }
-    .hero-title { animation: fadeIn .8s ease .35s both; }
-    .hero-bio { animation: fadeIn .8s ease .45s both; }
-    body::before { content:''; position:fixed; top:10%; left:50%; transform:translateX(-50%); width:600px; height:600px; background:radial-gradient(circle,rgba(139,92,246,.06),transparent 60%); pointer-events:none; z-index:0; }
+    body::before { content:''; position:fixed; top:-10%; right:-5%; width:500px; height:500px; background:radial-gradient(circle,rgba(129,140,248,.12),transparent 65%); pointer-events:none; animation:float 8s ease-in-out infinite; }
+    body::after { content:''; position:fixed; bottom:-10%; left:-5%; width:400px; height:400px; background:radial-gradient(circle,rgba(167,139,250,.08),transparent 65%); pointer-events:none; animation:float 10s ease-in-out infinite reverse; }
     .container { position:relative; z-index:1; }
-    section::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,var(--accent),transparent); opacity:.2; }
+    nav { z-index:100; }
     /* ─── Scroll Reveal & Entrance Animations ─── */
     @keyframes revealUp { from { opacity:0; transform:translateY(32px) } to { opacity:1; transform:translateY(0) } }
     @keyframes revealScale { from { opacity:0; transform:scale(0.92) } to { opacity:1; transform:scale(1) } }
@@ -138,7 +133,7 @@
     <div class="nav-inner">
       <span class="nav-name">Mohammad Navabi</span>
       <div class="nav-links">
-        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
       </div>
@@ -146,10 +141,10 @@
   </nav>
   <div class="hero">
     <div class="container">
-      <span class="hero-badge">Operations & Customer Success</span>
+      <div class="hero-avatar">M</div>
       <h1 class="hero-name">Mohammad Navabi</h1>
-      <p class="hero-title">Tehran, Iran</p>
-      <p class="hero-bio">Highly accomplished Senior Operations and Customer Success Leader with expertise in scaling support infrastructure and driving service excellence in fast-paced technology environments, particularly Fintech/Insurtech contexts. Proven track record in architecting AI-driven automation solutions that significantly enhance efficiency, reduce response times, and achieve superior customer satisfaction scores. Adept at leading cross-functional teams and ensuring platform stability for critical customer-facing systems.</p>
+      <p class="hero-title">Operations & Customer Success · Tehran, Iran</p>
+      <p class="hero-bio">Highly accomplished Senior Operations and Customer Success Leader with proven expertise in scaling support infrastructure and driving service excellence in fast-paced technology environments. Specializes in architecting AI-driven automation solutions that enhance efficiency, reduce response times, and achieve superior customer satisfaction scores. Experienced in leading cross-functional teams and ensuring platform stability for critical customer-facing systems.</p>
       <div class="hero-links">
         
         
@@ -159,20 +154,19 @@
   </div>
   <div class="container">
     <section id="skills">
-      <p class="section-label">Expertise</p>
       <h2 class="section-title">Skills &amp; Tools</h2>
       <div class="skills-container">
     <div class="skills-group">
       <div class="skills-group-label">Technical</div>
       <div class="skill-tags skills-container">
-        <span class="skill-tag skill-badge">AI Automation</span><span class="skill-tag skill-badge">NLP Virtual Agents</span><span class="skill-tag skill-badge">OpenAI API Integration</span><span class="skill-tag skill-badge">Workflow Automation</span><span class="skill-tag skill-badge">DevOps</span><span class="skill-tag skill-badge">Cloud Computing</span><span class="skill-tag skill-badge">AWS/Azure</span><span class="skill-tag skill-badge">System Administration</span><span class="skill-tag skill-badge">Network Management</span><span class="skill-tag skill-badge">Infrastructure Management</span><span class="skill-tag skill-badge">Monitoring Systems</span><span class="skill-tag skill-badge">CI/CD Pipelines</span>
+        <span class="skill-tag skill-badge">AI Automation</span><span class="skill-tag skill-badge">OpenAI API Integration</span><span class="skill-tag skill-badge">NLP Model Tuning</span><span class="skill-tag skill-badge">Workflow Automation</span><span class="skill-tag skill-badge">DevOps</span><span class="skill-tag skill-badge">AWS/Azure</span><span class="skill-tag skill-badge">Prometheus/Grafana</span><span class="skill-tag skill-badge">CI/CD Pipeline</span><span class="skill-tag skill-badge">System Administration</span><span class="skill-tag skill-badge">Network Management</span><span class="skill-tag skill-badge">Security Protocols</span>
       </div>
     </div>
   
     <div class="skills-group">
       <div class="skills-group-label">Tools</div>
       <div class="skill-tags skills-container">
-        <span class="skill-tag skill-badge">n8n</span><span class="skill-tag skill-badge">Zapier</span><span class="skill-tag skill-badge">Zendesk</span><span class="skill-tag skill-badge">Freshdesk</span><span class="skill-tag skill-badge">Prometheus</span><span class="skill-tag skill-badge">Grafana</span><span class="skill-tag skill-badge">OpenAI API</span><span class="skill-tag skill-badge">Knowledge Base Management</span><span class="skill-tag skill-badge">SLA Engine Design</span>
+        <span class="skill-tag skill-badge">n8n</span><span class="skill-tag skill-badge">Zapier</span><span class="skill-tag skill-badge">Zendesk</span><span class="skill-tag skill-badge">Freshdesk</span><span class="skill-tag skill-badge">Prometheus</span><span class="skill-tag skill-badge">Grafana</span><span class="skill-tag skill-badge">AWS</span><span class="skill-tag skill-badge">Azure</span><span class="skill-tag skill-badge">OpenAI API</span>
       </div>
     </div>
   
@@ -186,14 +180,13 @@
     <div class="skills-group">
       <div class="skills-group-label">Soft Skills</div>
       <div class="skill-tags skills-container">
-        <span class="skill-tag skill-badge">Customer Success Strategy</span><span class="skill-tag skill-badge">Team Building</span><span class="skill-tag skill-badge">Cross-functional Collaboration</span><span class="skill-tag skill-badge">Leadership</span><span class="skill-tag skill-badge">Project Management</span><span class="skill-tag skill-badge">Vendor Management</span><span class="skill-tag skill-badge">Stakeholder Communication</span><span class="skill-tag skill-badge">Process Automation</span><span class="skill-tag skill-badge">Incident Management</span>
+        <span class="skill-tag skill-badge">Team Building</span><span class="skill-tag skill-badge">Cross-Functional Collaboration</span><span class="skill-tag skill-badge">Stakeholder Communication</span><span class="skill-tag skill-badge">Vendor Management</span><span class="skill-tag skill-badge">Leadership</span><span class="skill-tag skill-badge">Mentoring</span><span class="skill-tag skill-badge">Incident Management</span><span class="skill-tag skill-badge">Escalation Management</span>
       </div>
     </div>
   </div>
     </section>
     <section id="experience">
-      <p class="section-label">Career</p>
-      <h2 class="section-title">Work Experience</h2>
+      <h2 class="section-title">Experience</h2>
       
     <div class="exp-item">
       <div class="exp-header">
@@ -201,7 +194,7 @@
         <span class="exp-date">May 2022 – Nov 2024</span>
       </div>
       <p class="exp-position">DevOps & Customer Support Lead</p>
-      <p class="exp-desc">Built entire Customer Support and Customer Success function from inception to full production scale. Spearheaded AI-powered support automation and served as Executive Operational Lead for Podin crypto exchange project deployment.</p>
+      <p class="exp-desc">Successfully built the entire Customer Support and Customer Success function from inception to full production scale, establishing robust operational frameworks for rapid user base expansion. Spearheaded AI-powered support automation implementation and served as Executive Operational Lead for the Podin crypto exchange project.</p>
       
         <ul class="exp-achievements">
           <li>Reduced average customer support response time by 40% within six months through AI-driven triage implementation</li><li>Achieved 15-point increase in CSAT score year-over-year through strategic Customer Success campaigns</li><li>Designed support architecture capable of handling 300% increase in daily ticket volume without proportional staffing growth</li><li>Maintained 99% uptime for critical customer-facing services during Podin exchange launch</li>
@@ -215,10 +208,10 @@
         <span class="exp-date">Jan 2015 – Jan 2022</span>
       </div>
       <p class="exp-position">Network & Systems Administrator</p>
-      <p class="exp-desc">Ensured robust, high-availability infrastructure operations critical for continuous business function across diverse enterprise services. Managed proactive monitoring systems and owned incident management lifecycle.</p>
+      <p class="exp-desc">Ensured robust, high-availability infrastructure operations critical for continuous business function across diverse enterprise services. Managed proactive monitoring systems and owned the incident management lifecycle.</p>
       
         <ul class="exp-achievements">
-          <li>Maintained high service reliability across technology stack</li><li>Implemented proactive monitoring systems</li><li>Contributed significantly to infrastructure stability</li><li>Managed incident response protocols effectively</li>
+          <li>Maintained high service reliability across the technology stack</li><li>Implemented proactive monitoring systems for infrastructure operations</li>
         </ul>
       
     </div>
@@ -229,36 +222,26 @@
         <span class="exp-date">Jan 2014 – Jan 2015</span>
       </div>
       <p class="exp-position">IT Manager</p>
-      <p class="exp-desc">Directed full-stack IT operations, encompassing network integrity, endpoint management, and implementation of foundational corporate security standards.</p>
-      
-        <ul class="exp-achievements">
-          <li>Implemented comprehensive IT security standards</li><li>Managed network integrity and endpoint security</li><li>Established foundational IT infrastructure</li><li>Directed full-stack IT operations successfully</li>
-        </ul>
+      <p class="exp-desc">Directed full-stack IT operations, encompassing network integrity, endpoint management, and the implementation and enforcement of foundational corporate security standards.</p>
       
     </div>
   
     <div class="exp-item">
       <div class="exp-header">
-        <span class="exp-company">Various Companies</span>
+        <span class="exp-company">Various</span>
         <span class="exp-date">Jan 2010 – Jan 2014</span>
       </div>
-      <p class="exp-position">Security & IT Specialist</p>
-      <p class="exp-desc">Established foundational operational maturity across security response protocols, system administration, and infrastructure hardening for early-stage organizations.</p>
-      
-        <ul class="exp-achievements">
-          <li>Created reliable IT backbones for early-stage organizations</li><li>Established security response protocols</li><li>Implemented infrastructure hardening measures</li><li>Built operational maturity frameworks</li>
-        </ul>
+      <p class="exp-position">Security & IT Roles</p>
+      <p class="exp-desc">Established foundational operational maturity across security response protocols, system administration, and infrastructure hardening, creating reliable IT backbones for early-stage organizations.</p>
       
     </div>
   
     </section>
     <section id="projects">
-      <p class="section-label">Portfolio</p>
-      <h2 class="section-title">Featured Projects</h2>
+      <h2 class="section-title">Projects</h2>
       <div class="projects-grid"></div>
     </section>
     <section id="education">
-      <p class="section-label">Background</p>
       <h2 class="section-title">Education</h2>
       <div class="edu-grid">
     <div class="edu-item edu-card">
