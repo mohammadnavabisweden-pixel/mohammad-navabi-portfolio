@@ -1,120 +1,127 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohammad Navabi</title>
-  <meta name="description" content="Operations-focused technology professional with hands-on experience in coordinating daily operations, technical alignment, and service stability across fintech ">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&amp;family=Nunito+Sans:wght@300;400;600&amp;display=swap" rel="stylesheet">
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>محمد نوابی — نمونه کار فریلنسر</title>
+  <meta name="description" content="متخصص فناوری با تمرکز بر عملیات، دارای تجربه عملی در عملیات روزمره، هماهنگی فنی و پایداری سرویس در محیط‌های فین‌تک و فناوری" />
+  <meta property="og:title" content="محمد نوابی — مدیریت عملیات و فناوری" />
+  <meta property="og:description" content="متخصص فناوری با تمرکز بر عملیات، دارای تجربه عملی در عملیات روزمره، هماهنگی فنی و پایداری سرویس در محیط‌های فین‌تک و فناوری" />
+  <meta property="og:type" content="profile" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="محمد نوابی — مدیریت عملیات و فناوری" />
+  <meta name="twitter:description" content="متخصص فناوری با تمرکز بر عملیات، دارای تجربه عملی در عملیات روزمره، هماهنگی فنی و پایداری سرویس در محیط‌های فین‌تک و فناوری" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "محمد نوابی",
+    "jobTitle": "مدیریت عملیات و فناوری",
+    "email": "mohamad.navabi82@gmail.com",
+    "telephone": "+98 912 685 5846",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "تهران",
+      "addressCountry": "ایران"
+    }
+  }
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --accent: #6366f1;
-      --text: #2c3e50;
-      --text-muted: #7f8c8d;
-      --border: #ecf0f1;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
       --bg: #ffffff;
-      --bg-soft: #f8f9fa;
-      --bg-sidebar: #fafbfc;
-      --font-heading: 'Lora', Georgia, serif;
-      --font-body: 'Nunito Sans', system-ui, sans-serif;
-      --max-w: 1000px;
+      --bg-warm: #fffbf5;
+      --bg-soft: #f8fafc;
+      --font: 'DM Sans', system-ui, sans-serif;
+      --max-w: 920px;
+      --radius: 12px;
     }
-    body { font-family: var(--font-body); color: var(--text); background: var(--bg); line-height: 1.7; }
+    body { font-family: var(--font); color: var(--text); background: var(--bg-warm); line-height: 1.7; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .layout {
-      max-width: var(--max-w); margin: 0 auto;
-      display: grid; grid-template-columns: 320px 1fr; min-height: 100vh;
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+    nav { background: var(--bg); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .nav-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
+      display: flex; justify-content: space-between; align-items: center; height: 60px;
     }
-    .sidebar {
-      background: var(--bg-sidebar); border-right: 1px solid var(--border);
-      padding: 48px 32px; position: sticky; top: 0; height: 100vh; overflow-y: auto;
+    .nav-name { font-weight: 700; font-size: 1.05rem; }
+    .nav-links { display: flex; gap: 24px; font-size: 0.9rem; }
+    .nav-links a { color: var(--text-muted); font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); text-decoration: none; }
+    .hero { padding: 80px 0 60px; display: flex; gap: 40px; align-items: center; }
+    .hero-avatar {
+      width: 120px; height: 120px; border-radius: var(--radius); flex-shrink: 0;
+      background: linear-gradient(135deg, var(--accent), #f59e0b); display: flex;
+      align-items: center; justify-content: center; color: white; font-size: 2.5rem; font-weight: 700;
     }
-    .sidebar-avatar {
-      width: 100px; height: 100px; border-radius: 50%; margin-bottom: 24px;
-      background: var(--accent); display: flex; align-items: center;
-      justify-content: center; color: white; font-family: var(--font-heading);
-      font-size: 2.5rem; font-weight: 600;
+    .hero-greeting { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 4px; }
+    .hero-name { font-size: 2.2rem; font-weight: 700; line-height: 1.2; margin-bottom: 4px; }
+    .hero-title { font-size: 1rem; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+    .hero-bio { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 20px; max-width: 520px; }
+    .hero-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .hero-link {
+      padding: 8px 18px; border-radius: var(--radius); font-size: 0.85rem; font-weight: 600;
+      transition: all 0.2s;
     }
-    .sidebar-name { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; margin-bottom: 4px; }
-    .sidebar-title { color: var(--accent); font-size: 0.9rem; font-weight: 600; margin-bottom: 20px; }
-    .sidebar-info { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px; }
-    .sidebar-links { margin-top: 24px; display: flex; flex-direction: column; gap: 8px; }
-    .sidebar-links a {
-      font-size: 0.85rem; padding: 8px 14px; border-radius: 8px;
-      background: var(--bg); border: 1px solid var(--border); color: var(--text);
-      transition: all 0.2s; display: block;
+    .hero-link.primary { background: var(--accent); color: white; }
+    .hero-link.secondary { background: var(--bg-soft); border: 1px solid var(--border); color: var(--text); }
+    .hero-link:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-decoration: none; }
+    section { padding: 48px 0; }
+    .section-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+    .section-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 28px; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+    .card {
+      background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 24px; transition: all 0.2s;
     }
-    .sidebar-links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
-    .hero-link { font-size: 0.85rem; padding: 8px 14px; border-radius: 8px; background: var(--bg); border: 1px solid var(--border); color: var(--text); transition: all 0.2s; display: block; }
-    .hero-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
-    .profile-link { font-size: 0.85rem; padding: 8px 14px; border-radius: 8px; background: var(--bg); border: 1px solid var(--border); color: var(--text); transition: all 0.2s; display: block; }
-    .profile-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
-    .sidebar-nav { margin-top: 32px; }
-    .sidebar-nav a {
-      display: block; padding: 8px 0; font-size: 0.85rem; color: var(--text-muted);
-      border-bottom: 1px solid var(--border); transition: color 0.2s;
-    }
-    .sidebar-nav a:hover { color: var(--accent); text-decoration: none; }
-    .main { padding: 48px 40px; }
-    .section { margin-bottom: 48px; }
-    .section-title {
-      font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700;
-      margin-bottom: 20px; padding-bottom: 8px; border-bottom: 2px solid var(--accent);
-    }
-    .bio-text { color: var(--text-muted); font-size: 0.95rem; font-weight: 300; }
+    .card:hover { border-color: var(--accent); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
     .skills-container { display: flex; flex-wrap: wrap; gap: 8px; }
     .skill-badge {
-      padding: 5px 14px; background: var(--bg-soft); border: 1px solid var(--border);
-      border-radius: 6px; font-size: 0.82rem; transition: border-color 0.2s;
+      padding: 6px 16px; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; font-size: 0.85rem; font-weight: 500; transition: all 0.2s;
     }
-    .skill-badge:hover { border-color: var(--accent); }
+    .skill-badge:hover { border-color: var(--accent); background: var(--bg-soft); }
     .skills-group { margin-bottom: 16px; }
     .skills-group-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 8px; }
     .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .skill-tag { padding: 5px 14px; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 6px; font-size: 0.82rem; }
-    .exp-item { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
-    .exp-item:last-child { border-bottom: none; }
-    .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
-    .exp-company { font-family: var(--font-heading); font-weight: 600; font-size: 1.05rem; }
-    .exp-date { font-size: 0.8rem; color: var(--text-muted); }
-    .exp-position { color: var(--accent); font-size: 0.9rem; font-weight: 600; margin: 4px 0 8px; }
-    .exp-desc { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 8px; font-weight: 300; }
+    .skill-tag { padding: 6px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-size: 0.85rem; font-weight: 500; }
+    .exp-item { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 16px; }
+    .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+    .exp-company { font-weight: 700; }
+    .exp-date { font-size: 0.82rem; color: var(--text-muted); background: var(--bg-soft); padding: 2px 10px; border-radius: 6px; }
+    .exp-position { color: var(--accent); font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; }
+    .exp-desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; }
     .exp-achievements { list-style: none; }
-    .exp-achievements li { font-size: 0.85rem; padding: 2px 0; }
-    .exp-achievements li::before { content: "• "; color: var(--accent); }
-    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .project-card { border: 1px solid var(--border); border-radius: 10px; padding: 20px; transition: all 0.2s; }
-    .project-card:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
-    .project-name { font-family: var(--font-heading); font-weight: 600; margin-bottom: 6px; }
-    .project-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px; font-weight: 300; }
-    .project-tech { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
-    .project-tech span { font-size: 0.72rem; padding: 2px 8px; background: var(--bg-soft); border-radius: 4px; color: var(--text-muted); }
-    .project-links { font-size: 0.82rem; }
-    .project-links a { margin-right: 12px; }
-    .edu-item { margin-bottom: 16px; }
-    .edu-degree { font-family: var(--font-heading); font-weight: 600; }
-    .edu-institution { color: var(--accent); font-size: 0.9rem; }
-    .edu-date { font-size: 0.8rem; color: var(--text-muted); }
-    .cert-item { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-    .cert-name { font-weight: 500; }
-    .cert-issuer { color: var(--text-muted); font-size: 0.82rem; }
-    footer { padding: 32px 0; text-align: center; font-size: 0.82rem; color: var(--text-muted); }
-    @media (max-width: 768px) {
-      .layout { grid-template-columns: 1fr; }
-      .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); text-align: center; padding: 32px 24px; }
-      .sidebar-avatar { margin: 0 auto 20px; }
-      .sidebar-links { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-      .sidebar-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-      .sidebar-nav a { border-bottom: none; }
-      .main { padding: 32px 24px; }
-      .projects-grid { grid-template-columns: 1fr; }
-    }
+    .exp-achievements li { font-size: 0.875rem; padding: 3px 0; }
+    .exp-achievements li::before { content: "✓ "; color: var(--accent); font-weight: 700; }
+    .project-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: all 0.2s; }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+    .project-name { font-weight: 700; margin-bottom: 8px; }
+    .project-desc { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 12px; }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .project-tech span { font-size: 0.75rem; padding: 2px 8px; background: var(--bg-soft); border-radius: 4px; color: var(--accent); font-weight: 600; }
+    .project-links { font-size: 0.85rem; font-weight: 600; }
+    .project-links a { margin-right: 14px; }
+    .edu-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+    .edu-degree { font-weight: 700; }
+    .edu-institution { color: var(--accent); font-size: 0.9rem; font-weight: 500; }
+    .edu-date { font-size: 0.82rem; color: var(--text-muted); }
+    .cert-item { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 20px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
+    .cert-name { font-weight: 600; }
+    .cert-issuer { font-size: 0.82rem; color: var(--text-muted); }
+    footer { text-align: center; padding: 40px 0; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border); }
+    @media (max-width: 640px) { .hero { flex-direction: column; text-align: center; } .hero-bio { max-width: 100%; } .hero-links { justify-content: center; } .nav-links { display: none; } }
   
     /* ─── Decorative Enhancements ─── */
-    .sidebar { position:relative; }
-    .sidebar::after { content:''; position:absolute; top:0; right:0; width:1px; height:100%; background:linear-gradient(to bottom,transparent,var(--accent),transparent); opacity:.2; }
+    body::before { content:''; position:fixed; top:0; right:0; width:40%; height:60%; background:radial-gradient(ellipse at top right,rgba(249,115,22,.04),transparent 60%); pointer-events:none; z-index:0; }
+    .container { position:relative; z-index:1; }
     /* ─── Scroll Reveal & Entrance Animations ─── */
     @keyframes revealUp { from { opacity:0; transform:translateY(32px) } to { opacity:1; transform:translateY(0) } }
     @keyframes revealScale { from { opacity:0; transform:scale(0.92) } to { opacity:1; transform:scale(1) } }
@@ -136,138 +143,25 @@
   </style>
 </head>
 <body>
-  <div class="layout">
-    <aside class="sidebar">
-      <div class="sidebar-avatar">M</div>
-      <h1 class="sidebar-name">Mohammad Navabi</h1>
-      <p class="sidebar-title">Operations &amp; Technology Management | AI-driven Process Optimization</p>
-      <p class="sidebar-info">Tehran, Iran</p>
-      <p class="sidebar-info">mohamad.navabi82@gmail.com</p>
-      <p class="sidebar-info">+98 912 685 5846</p>
-      <div class="sidebar-links">
-        
-        
-        
-      </div>
-      <nav class="sidebar-nav">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-      </nav>
-    </aside>
-    <main class="main">
-      <div class="section" id="about">
-        <h2 class="section-title">About Me</h2>
-        <p class="bio-text">Operations-focused technology professional with hands-on experience in coordinating daily operations, technical alignment, and service stability across fintech and technology environments. Experienced in executive-level operational roles and organizational process development with expertise in applying automation and AI-driven tools to streamline workflows. Strong critical thinking and problem-solving abilities, especially in cross-team environments requiring clarity, structure, and prioritization.</p>
-      </div>
-      <div class="section" id="skills">
-        <h2 class="section-title">Skills</h2>
-        
-    <div class="skills-group">
-      <div class="skills-group-label">Technical</div>
-      <div class="skill-tags skills-container">
-        <span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0s;">Operations Planning &amp; Coordination</span><span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.04s;">Service Delivery &amp; Incident Handling</span><span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.08s;">Process Definition &amp; Documentation</span><span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.12s;">Automation &amp; AI Concepts for Operational Efficiency</span><span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.16s;">API-based Workflow Integration</span><span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.2s;">CRM/ERP familiarity</span><span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.24s;">Reporting &amp; KPI Monitoring</span><span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.28s;">Linux</span><span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.32s;">Basic Cloud Concepts</span><span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.36s;">Prometheus/Grafana concepts</span>
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-name">محمد نوابی</span>
+      <div class="nav-links">
+        <a href="#services">مهارت‌ها</a>
+        <a href="#work">تجربه کاری</a>
+        <a href="#projects">پروژه‌ها</a>
+        <a href="#contact">تماس</a>
       </div>
     </div>
-  
-    <div class="skills-group">
-      <div class="skills-group-label">Tools</div>
-      <div class="skill-tags skills-container">
-        <span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.4s;">n8n</span><span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.44s;">Excel</span><span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0s;">AI-assisted automation concepts</span><span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.04s;">Ticketing &amp; Knowledge-base systems</span><span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.08s;">BI concepts</span>
-      </div>
-    </div>
-  
-    <div class="skills-group">
-      <div class="skills-group-label">Languages</div>
-      <div class="skill-tags skills-container">
-        <span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.12s;">Persian</span><span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.16s;">English</span>
-      </div>
-    </div>
-  
-    <div class="skills-group">
-      <div class="skills-group-label">Soft Skills</div>
-      <div class="skill-tags skills-container">
-        <span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.2s;">Cross-functional Collaboration</span><span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.24s;">Critical Thinking &amp; Problem Solving</span><span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.28s;">Leadership</span><span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.32s;">Project Management</span><span class="skill-tag skill-badge reveal-item visible" style="transition-delay: 0.36s;">Resource Allocation</span>
-      </div>
-    </div>
-  
-      </div>
-      <div class="section" id="experience">
-        <h2 class="section-title">Experience</h2>
-        
-    <div class="exp-item reveal-item visible" style="transition-delay: 0s;">
-      <div class="exp-header">
-        <span class="exp-company">Baloot Company</span>
-        <span class="exp-date">Jan 2022 – Dec 2024</span>
-      </div>
-      <p class="exp-position">Operations &amp; Executive Support (Acting COO responsibilities)</p>
-      <p class="exp-desc">Supported daily operational management and coordination across technical and business teams in fintech environment.</p>
-      
-        <ul class="exp-achievements">
-          <li>Defined internal workflows and service expectations to improve clarity in execution and delivery</li><li>Integrated automation and AI-based tools to reduce manual workloads and improve operational response time</li><li>Monitored project progression and operational metrics, reporting directly to senior leadership</li><li>Applied structured problem-solving to resolve blockers between teams and maintain progress</li>
-        </ul>
-      
-    </div>
-  
-    <div class="exp-item reveal-item visible" style="transition-delay: 0.08s;">
-      <div class="exp-header">
-        <span class="exp-company">Rahnema Holding</span>
-        <span class="exp-date">Jan 2015 – Dec 2022</span>
-      </div>
-      <p class="exp-position">Network &amp; Systems Operations</p>
-      <p class="exp-desc">Maintained daily service continuity and technical operations for internal systems.</p>
-      
-        <ul class="exp-achievements">
-          <li>Maintained daily service continuity and technical operations for internal systems</li><li>Troubleshot technical issues and incidents in cooperation with engineering teams</li><li>Supported monitoring and reliability efforts to maintain service availability</li>
-        </ul>
-      
-    </div>
-  
-    <div class="exp-item reveal-item visible" style="transition-delay: 0.16s;">
-      <div class="exp-header">
-        <span class="exp-company">Tagfab</span>
-        <span class="exp-date">Jan 2014 – Dec 2015</span>
-      </div>
-      <p class="exp-position">IT Operations Manager</p>
-      <p class="exp-desc">Managed IT infrastructure and daily operational workflows.</p>
-      
-        <ul class="exp-achievements">
-          <li>Managed IT infrastructure and daily operational workflows</li><li>Established foundational operational practices to improve service stability</li>
-        </ul>
-      
-    </div>
-  
-      </div>
-      <div class="section" id="projects">
-        <h2 class="section-title">Projects<div>ai coding</div></h2>
-        <div class="projects-grid"></div>
-      </div>
-      <div class="section" id="education">
-        <h2 class="section-title">Education</h2>
-        
-    <div class="edu-item edu-card reveal-item visible" style="transition-delay: 0.24s;">
-      <div class="edu-degree">BS in Computer Engineering - Software</div>
-      <div class="edu-institution">Jahad University of Tehran</div>
-      <div class="edu-date">null – null</div>
-      
-    </div>
-  
-      </div>
-      
-      <footer>
-        <p>© 2026 Mohammad Navabi</p>
-      </footer>
-    </main>
-  </div>
-
-<script>
-!function(){var o=new IntersectionObserver(function(e){e.forEach(function(i){i.isIntersecting&&(i.target.classList.add("visible"),o.unobserve(i.target))})},{threshold:.1,rootMargin:"0px 0px -60px 0px"});document.querySelectorAll("section,.hero,.hero-content").forEach(function(s){s.classList.add("reveal-item");o.observe(s)});var cards=document.querySelectorAll(".project-card,.exp-item,.edu-item,.edu-card,.bento-card,.cert-item");cards.forEach(function(el,i){el.classList.add("reveal-item");el.style.transitionDelay=.08*(i%6)+"s";o.observe(el)});var badges=document.querySelectorAll(".skill-badge,.skill-tag");badges.forEach(function(el,i){el.classList.add("reveal-item");el.style.transitionDelay=.04*(i%12)+"s";o.observe(el)})}();
-</script>
-
-
-
+  </nav>
+  <div class="container">
+    <div class="hero">
+      <div class="hero-avatar">م</div>
+      <div>
+        <p class="hero-greeting">سلام، من</p>
+        <h1 class="hero-name">محمد نوابی</h1>
+        <p class="hero-title">مدیریت عملیات و فناوری</p>
+        <p class="hero-bio">متخصص فناوری با
   <div class="pf-brand" style="text-align:center;padding:16px;font-size:12px;color:rgba(255,255,255,0.3)">
     <a href="https://portfolioai.ir?ref=site&amp;sid=mohammad-navabi-portfolio"
        title="AI Portfolio Builder – Build yours free"
@@ -275,4 +169,3 @@
       &#10022; Built with PortfolioAI
     </a>
   </div>
-</body></html>
